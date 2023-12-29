@@ -1,0 +1,700 @@
+delete logo.svg not needed and whatever in app.js
+PS C:\Code\vscodes\mernstack> cd.. 
+PS C:\Code\vscodes> cd .\MERNSTACK\
+
+PS C:\Code\vscodes\MERNSTACK> npx create-react-app mernapp
+
+Creating a new React app in C:\Code\vscodes\mernstack\mernapp.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1426 packages in 2m
+
+231 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 74 packages, and changed 1 package in 11s
+
+240 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+
+removed 1 package, and audited 1500 packages in 4s
+
+240 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Created git commit.
+
+Success! Created mernapp at C:\Code\vscodes\mernstack\mernapp
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+//IF U HAVE ALREADY CREATES NPX AP , THEN TO START THE FILE USE BELOW TWO COMMANDS
+
+We suggest that you begin by typing:
+
+ cd..
+  cd mernapp
+  npm start
+
+
+  or
+  PS C:\Code\vscodes\mernstack> cd..
+PS C:\Code\vscodes> cd .\MERNSTACK\
+PS C:\Code\vscodes\MERNSTACK> cd .\mernapp
+PS C:\Code\vscodes\MERNSTACK\mernapp> npm start
+
+
+Happy hacking!
+PS C:\Code\vscodes\MERNSTACK> cd .\mernapp\
+PS C:\Code\vscodes\MERNSTACK\mernapp> npm start
+
+//BOOTSTRAP DOWNLOAD 
+go to bootstarp dark 5 in git vinidrouge and at last quick satrt guide and copy the <link> to index.htl above title in public
+// i didnt want dark mode therefore i linked simple bootstarp this  time from quick start of plainn bootstrap 
+
+//components
+remember always make compoenent with capital letter and if u have by mistake given it small letter then delete the filr and make it again with capital letter otherwise rafc gives it wrong name
+
+// create  componenet folder and inside it navbar file in which write rfc
+whatever is reusable , add it in component folder, similarly add footer.js
+//create screen folder in src , create home.js as file
+// inculde this navbar in 
+return in home.js can never have multiple div and also u hhave to wrap them in empty tags <> </>
+include navbar as <Navbar/> mind the syntax 
+
+import home in app.js
+
+
+//MAKE SURE ALL COMPONENTS EVEN IN SCREEN SHLD START WITH CAPITAL LETTER
+
+//BOOTSRAP 
+if u are copying anything eg. navbar from bootstrap then make sure class is className
+
+//REACT ROUTER -helps react application to be a single page application that is , itprevents it from reloading
+
+// anchor tag always open the complete site to a new page while react is a single page applocation therefore we need to remove the anchor tag and href
+
+REACT ROUTER dom
+go to react website and copy reat router dom statment and run it    link : https://www.npmjs.com/package/react-router-dom
+npm i react-router-dom   , you can ctrl+c , exist and then run the statemnt and start it again by npm start
+look at pacakge.jso u will see router includeed
+
+// why router 
+// u can use many things by importing , in app.js  eg. import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+//  A FEW CHANGES IN dom
+import {
+  BrowserRouter as Router,
+  Switch,   // REPLACE BY routes
+  Route,
+  Link        // u caan remove link from app.js cuzz we dont require it , also when u need it u can import it linke innavbar whch u will further see
+
+} from "react-router-dom";
+
+return will be wrapped in Router
+function App() {
+  return (
+    <Router>   //see
+    <div>
+      <Routes>  // all Route will be put inside Routes instead of switches now 
+      
+          <Route exact path="/" element={<Home/>}/>  // there can be several orthr routes too, exact path is used instead of js path, which will define the path where the elemnt will go , the elemnt will be components and see how they are included in curly braces and the /> 
+        </Routes>
+     
+    </div>
+    </Router>
+  
+  );
+
+//still the site will reload , therfore u need to import link in navbar suppose and also change the acnhor tags to link and the href to 'to' 
+// after doing all tis u will se that the page is not reloading however it will show changes
+
+//index.css
+if u want any change related to css to b applied
+ on complete website , put tha change in body of index.css also u will have to add the link to public , suupose giving font style to body anf its link then to public
+
+ //Home - add cards from bootstrap
+ make sure to close every tag ex. <img src="..." class="card-img-top" alt="..."/> 
+ make sure to use className and style inside braces like :  style={{"width": "18rem"}}> ( this is like making an object and giving it values , u can also give height)
+
+ //container 
+ when we write className as conatiner in bootstarp we say that we writing code for mobile purpose , if screen gets bigger or varies zyda then we have to make changes 
+
+ //when u are using JavaScript then u have to enclose it in {}
+
+ //div is not a inline func . to make it inline give className='d-inline'
+
+ //cards - we are using cards frequently therefore we make it as a component and whenever we need it we call it in home
+
+ //how to copy foooter from bootstrap
+ go to footer bootstrap then inspect it ,increase the size of upr chupa hua html then click the left most top icon and select whcihever footer u like hover and select that n COPY ELEMENT
+ paste this in footer in componenets  , xlinks will give error so remove them , anchor tags also (u can replace anchor tags with Link but before that import link as : import { Link } from 'react-router-dom') complete would be <Link to=".."></Link> also change the class as className
+
+ //carousel - copypaste from bootstrap as a new compoenent
+ close all image tags 
+ className shl b proper
+ call it finallly in home
+
+ //how to download bootstrap
+ run the command - npm i bootstrap bootstrap-dark-5  react-bootstrap for to use bootstarp we wil have to then import in app.js
+ the foll links :
+ import Login from './screens/Login';
+import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
+we need them kyuki kai baar bootstrap jese coarousel js use krta h jo hame nhi pata to bootstrap ko downlaod krke ye link iimport krke wo js ajati h khud
+
+
+//u can generate random images by https://awik.io/generate-random-images-unsplash-without-using-api/
+
+//Next step is to ADD SEARCH BAR from bootstrap on the carousel
+//we go to navbar k snippents and copy from there only search bar wala snippet , also usme ham navbar wali line chor dege cuz we dont need that , we just copy form ie :
+<form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form> 
+remember to add sarch bar in carousel u will have to take care of the fact that carousel me caption walao fucntionality use krege tbi wo caption ki jgh ayega js go to carousel bpotstrap and see how caption is put in one of the corousel ther ewe will put search bar ka snippet   
+//also remember when we are pasting search bar over a carousel - firstly webpage is the base then carousel is the element that is a layer above it now we are putting another child element ir. search bar on it , now webapgae wont know which element to show therefore to make layer we provide zIndex =10 usually the zindex is 0 of every elenent therfore they merge, esei agr zindex nahi dia to search bar crouse k neechey chup jayega , so what we can do is increase the zindex of either of the element , here we inc of the search bar
+//the button of search was coming below and not along with the search bar so to do that i made the added display = flex to the form 
+
+//add image  in card , simply add the http url in the img tag 
+
+//doctor: https://www.google.com/search?q=types+foof+woman+doctores&sca_esv=559325667&rlz=1C1ONGR_enIN983IN983&ei=zbblZNzcNtbz4-EPjPOswAI&ved=0ahUKEwic9_zEovKAAxXW-TgGHYw5CygQ4dUDCA8&uact=5&oq=types+foof+woman+doctores&gs_lp=Egxnd3Mtd2l6LXNlcnAiGXR5cGVzIGZvb2Ygd29tYW4gZG9jdG9yZXMyCBAAGAgYHhgNMggQABiKBRiGAzIIEAAYigUYhgMyCBAAGIoFGIYDMggQABiKBRiGA0iOKFDpAliDJ3ACeAGQAQGYAfUBoAGZHqoBBjEuMjEuNLgBA8gBAPgBAagCCsICFhAuGAMYjwEY6gIYtAIYjAMY5QLYAQHCAhYQABgDGI8BGOoCGLQCGIwDGOUC2AEBwgIIEAAYigUYkQLCAgsQABiABBixAxiDAcICERAuGIAEGLEDGIMBGMcBGNEDwgIFEAAYgATCAgUQLhiABMICBxAuGIoFGEPCAgcQABiKBRhDwgIIEAAYgAQYsQPCAgsQABiKBRixAxiRAsICDRAAGIoFGLEDGIMBGEPCAgsQABiKBRixAxiDAcICBxAAGIAEGArCAgcQABgNGIAEwgIQEAAYDRiABBixAxiDARixA8ICDRAAGA0YgAQYsQMYgwHCAgoQABgNGIAEGLEDwgIGEAAYHhgNwgIIEAAYBRgeGA3CAgcQIRigARgKwgIKECEYFhgeGB0YCuIDBBgAIEGIBgG6BgQIARgK&sclient=gws-wiz-serp
+
+// SET THE BACKGROUND IMAGE TO A PARTICULAR HEIGHT , go to index.css and set the max height, also we have used carousel so we chnages its max ht and aslo for the images to FIT IN we use objectfit as contain
+
+MONGODB - downloaded mongodb community server , mongo db database from tools and then signed in for atlas video - 4 
+
+//go to atlas , go to project , give name to ur project , create database 
+// username- 21051221 password- Kiit*123
+// go to netwrok access and set ip address
+// it is not safe to allow from anywhere , u shld add an ip address to network access but for now we are letting it access from anywhere
+
+// go to database and then cluster then collection and add my collection there  which will have all the collections and databses
+//download json files for ur website eg here it was foodcategory and data
+//in arshdeep fooditems= doctors and foodCategory=doctorCategory
+//how to get json file inside the database
+// go to cmd , run mongod in on ebakcground and in ther cmd terminal copy the command from cmd line tools in atlass go to Data Import and Export Tools  copy the import command 
+and paste it in terminal  , there will be some changes 
+
+ex    mongoimport --uri mongodb+srv://21051221:<PASSWORD>@cluster0.bfwez7z.mongodb.net/<DATABASE> --collection <COLLECTION> --type <FILETYPE> --file <FILENAME>
+then here it would be -  C:\Users\KIIT>mongoimport --uri mongodb+srv://21051221:Kiit*123@cluster0.bfwez7z.mongodb.net/gentleassist --collection doctors --jsonArray --file "C:\Code\vscodes\mernstack\mernapp\doctorData2.json"
+//similalry do it for any other .json file that u want to load in collectios eg here another is doctorcategory.
+//in above syntax if you are copy pasting then change name from doctors to doctor category and change the path as well (give entire path of dcotorcatgeory)
+
+                                                                                                                                                                                 (copy the above path by going to that file and clicking copy as path)                        
+//changes made in doctordata2 
+Category - Gynaecologist
+
+//category 1 for Gynaecologist is done now u have to do 4 issue for category of obsteterics ob/gyn and 2 for skin may be (issues for breat/armpits or so )
+//after this update category.json wali file , then go to atlas then terminal and install these both files as said in video 4 into collections 
+
+    {
+        "CategoryName": "Biryani/Rice"
+    },
+    {
+        "CategoryName": "Starter"
+    },
+    {
+        "CategoryName": "Pizza"
+    }
+
+
+    //now we r gonna set the backend 
+    // first make a folder backend inside mernapp 
+    //open terminal and reach inside the backend directory  by typing 
+PS C:\Code\vscodes\mernstack> cd .\mernapp
+PS C:\Code\vscodes\mernstack\mernapp> cd .\backend\
+// now use nmp init to create packakage.json  and then npm install express , also intall nodemon and mongoose , all can be written in one line though
+PS C:\Code\vscodes\mernstack\mernapp\backend> npm install express
+
+added 58 packages, and audited 59 packages in 3s
+
+8 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Code\vscodes\mernstack\mernapp\backend> npm install nodemon
+
+added 33 packages, and audited 92 packages in 3s
+
+11 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Code\vscodes\mernstack\mernapp\backend> npm install mongoose
+
+// now we see that there are 1k+ files in git , therefore we will chnage the dependecy , by removing the slash wirte in front of node module in gitignore, then dependencies will come out of the node module of backend and come in gitignore
+
+// now since the name of entry point for backend's express was index.js therefore , we will have to create a file named index.js inside backend folder where we will write express or set up express
+//setting up express
+
+copy paste (//change port nnumber to 5000 for example. )and  this from express documentatiion: const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+// DO install THUNDER CLIENT - it is just like postman for testting of the end points of server , it is just an extension which is providded in vs code 
+
+//TO RUN EXPRESS (nodemon index.js) : u shld be inside the backend folder then write nodemon .\index.js cuz it has express
+if ur starting completely new terminal , then come inside mernapp folder , then inside backend and then run idex.js as:
+ PS C:\Code\vscodes\mernstack> cd .\mernapp
+PS C:\Code\vscodes\mernstack\mernapp> cd .\backend
+PS C:\Code\vscodes\mernstack\mernapp\backend> nodemon index.js
+
+//MONGOOSE 
+// why mongoose 
+one reason is , mongodb is schema less so it will not give u alerts is anything is wrong but mongoose will , also mongoos can connect ur terminal directly form vs code and i efficient
+
+// now we will create a file inside backend named db.js which will have connect the data base or have mognoose related things
+// write require mongoose wala statemnt and then connect wala statement to connect mongoose  (documentation)
+const mongoose = require('mongoose');
+BUT
+mongoose.connect('mongodb://127.0.0.1:27017/test'); // where will this url come from ? go to atlas go to connect , go to native drivers , copy code : (mongodb+srv://21051221:<password>@cluster0.bfwez7z.mongodb.net/?retryWrites=true&w=majority) here input the password u made initially in mongod , and rather than pasting directly this url , store it in a variable and then put that variable inside connect wali  line and also give an arrow fucntionwhich will tell if it is connected
+// if there is any problem u can change version to older versions and try eg 2.22
+//now code looks like 
+const mongoose = require('mongoose');
+const mongoURI='mongodb+srv://21051221:KIIT*123@cluster0.bfwez7z.mongodb.net/?retryWrites=true&w=majority'    //u will have to put the name of the data base eg here it is gentleassist before question mark
+mongoose.connect(mongoURI,()=>{console.log("connected")});
+
+after doing this we see that we are toh inside index.js and using express , so how will we bring mongoose ?or call it ? thefo we export it 
+//we will make a fcuntioninside db and export it or bring it inside express ie index.js
+// code inside db : 
+const mongoose = require('mongoose');
+const mongoURI='mongodb+srv://21051221:KIIT*123@cluster0.bfwez7z.mongodb.net/gentleassist?retryWrites=true&w=majority'
+
+const mongoDB=async()=>{
+   await mongoose.connect(mongoURI,()=>{console.log("connected")}); // we used here async await , bcz it wa staking a lot of time to show connected
+}
+module.exports=mongoDB;
+//remeber we dont call it here we will call it inside index like : 
+const mongoDB=require("./db") // remeber we use reuiqre and not import cuz it is nodemon
+mongoDB();
+// if error Mongoose.prototype.connect() no longer accepts a callback occurs then downgrade the version of mongoose as mentioned earlier that this could happen write npm uninstall mongoose and then npm install 
+
+// to make error control more better for promis ethtat mongoose.connect will return we modify the code as :
+const mongoose = require('mongoose');
+const mongoURI='mongodb+srv://21051221:KIIT*123@cluster0.bfwez7z.mongodb.net/?retryWrites=true&w=majority'
+
+const mongoDB=async()=>{
+   await mongoose.connect(mongoURI,{useNewUrlParser: true},(err,result)=>{
+    if(err)
+    console.log("---",err)
+else
+{console.log("connected"); }
+});
+}
+module.exports=mongoDB;
+
+//HOW TO BRING DATA PRESENT IN MONGODB OR ATLAS IN THE LOCAL SYSTEM or bringing database from mongodb to the backend with help of mongoose
+now mongodb is schema less ie. its not structured , so it wont give alerts if data entered goes out of order or structure
+to bring the database we will use mongoose.collection.dbName.collection("") inside database , the "" will have the name of the collection or particualr database u want ,also we will use find() with empty braces to bring all of data inside an convert it into an jsonArray
+
+now we have brought the data , with the help of the below code :
+const mongoose = require('mongoose');
+const mongoURI='mongodb://21051221:2jiqoTYccnhO9sve@ac-x0u4ujd-shard-00-00.bfwez7z.mongodb.net:27017,ac-x0u4ujd-shard-00-01.bfwez7z.mongodb.net:27017,ac-x0u4ujd-shard-00-02.bfwez7z.mongodb.net:27017/gentleassist?ssl=true&replicaSet=atlas-la3jgc-shard-0&authSource=admin&retryWrites=true&w=majority'
+mongoose.set('strictQuery', true);      //this is just to remove a slight error 
+
+
+const mongoDB=async()=>{ 
+   await mongoose.connect(mongoURI,{useNewUrlParser: true}, async (err,result)=>{
+    if(err)
+    console.log("---",err)
+else
+{console.log("connected");
+const fetched_data=await mongoose.connection.db.collection("doctors");
+fetched_data.find({}).toArray(function(err,data){
+    if(err){
+        console.log(err);
+
+    }
+    else console.log(data);
+})
+
+}
+});
+}
+module.exports=mongoDB;
+
+// WE KNOW CRUD , WE HAVE READ THE DATABASE , NOW IF WE WANT TO CREATE IE. IF SOMEONE WANTS TO CREATE AN ACCNT AND WE WANNA SAVE THE PASSWORD eject
+we kno that mongodb is schemaless so even is something is missing ex password it wont alert us , but at login time we would want it therfore we use mongoose which has schema
+we will create a schema for login for our user wit help og mongoose
+now lets create model folder inside the backend folder and have user file inside it with U capital in User
+//actually what happens is that mongoose can use require which states that thing is needed and is mandatory , alsoit provides a structure
+after u have made a schema u can export it ,so that in future u can import and use it 
+u can visit and see mongoose for problems
+//MODEL - now after mongoose , model is used to do CRUD operations ie. how will u make the user enter the details etc.
+//we havent made written anything in model yet
+// we will first make a folder inside backend named routes and then use the schema there 
+with the help of routers we can implement get & post
+// lets write code isndie createuser.js 
+const express=require('express')
+const router=express.Router()
+const User=require('../models/User') //we need User.js here ie. the schema 
+
+router.post("/createuser",async(req,res)=>{
+    try{                                               //we r using try catch instea of if else
+       await User.create({
+            name:"iram",
+            password:"123456",
+            email:"iram25484@gmail.com",
+            contact:9149281571,
+            location:"hshshsh" 
+        })
+
+        res.json({success:true});             // since it is a (req,res) therfore we send response in json type that is user is made js give response as true else false
+    }     catch(error){
+        console.log(error)
+        res.json({success:false});
+
+    }
+})
+module.exports=router;        //dont forget to export router that u have made (cuz we need it in index.js)
+
+NOW WE have created a user but how will i know if a user is made
+//now we will go to index.js and add this line :  app.use(express.json()) //needed
+app.use('/api',require("./Routes/CreateUser"));
+
+now open thunder and select post and type this app.use(express.json()) //needed
+app.use('/api',require("./Routes/CreateUser")); , it will return success
+an u will see that a new data is crated 'user' in atlas
+//BODY of json in thunder
+//now u can also snd the below data directly from json of thunder , js set a header as content type -> application header , and dont proivde default values in index.js rather do this 
+           name:req.body.name,
+            password:req.body.password,
+            email:req.body.email,
+            contact:req.body.contact,
+            location:req.body.location 
+
+            while inside json of thunder itll be like :
+
+                   {     "name":"iram",
+           " password":"123456",
+           " email":"iram25484@gmail.com",
+            "contact":9149281571,
+            "location":"hshshsh" 
+                }      //jitne bar send krege uti bar naya ban jaega
+
+
+//VALIDATOR
+how will we validate the input by the user , first install express validator from express validtor , we could have validated things by if else codntion but it is better to go with the librarires such as validator                     
+u will see in te docuentation of 6.14.0 that they have used app.use but we have used router.use , ok so no issue 
+firs copy/ import tis line : const { body, validationResult } = require('express-validator'); inside creatuser 
+then copy : body('username').isEmail(),
+  // password must be at least 5 chars long
+  body('password').isLength({ min: 5 }),   //INSIDE THE ROUTER.POST BEFORE ASYNC //ALSO MAKE SURE THAT WE HAVE USED EMAIL RATHER THAN USERNAME SO CHANGE IT TO EMAIL 
+  you can also custumise it as we have added min length for name as well s 5 
+// after async we will copy paste   const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+u can check it frm thunder by sending the requuest again on the link  localhost:5000/api/createuser and gigving a suppose 3 word passwrd , it will show error in response
+
+//now we will connect this entire backend with frontend , so we will open 2 terminals and create a ru npm start in one while nodemon in other 
+
+ create a signup.js file inside screens - type rfc , go to navbar and add signup inside LINK TAG there , also go to app.js and include signup as a route and import it too
+ now copy form from bootstrap and paste in signup also wrap it in div of class called container(css of bootstrap) so that it fits in mobile or in any screen  , close all input fields, also add a link tag for submitting name of 
+ 
+ //while using usestate in sigup dont forget to import usestate //also update name and value in 
+ const [credentials, setcredentials] = useState({name:"",email:"",password:"",geolocation:""})
+//defaault values we have provided as "" and as objects
+//now we will also add onchange event inside link tag 
+after completing the handlesubmt (also add fucntion inside form tag as handlesubmit) fucntion we will have to do some changes in backend to combat CORS policy ti to access allow control 
+lets go to index.js and write as it is :  app.use((req,res,next)=>{
+  res.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin,X-Requested-With,Content-Type,Accept"
+  );
+  next();
+ })
+
+ //replace for in a any tag with htmlFor
+ now since we have completed the express validator and we have completed checks for signup , first start npm in one terminal and for backend start nodemon index.js like u usually do and u will see if u input anything wrong then it will show pop up as invalid 
+
+ //now we will set the LOGIN page , it will be mostly like sign up page, login wil have only email and password
+ in login we dont need to validate the data altho we wil check the email once by the user whie login , so remove validator rather we need to check if v have that email existing in the backend/mongodb database so we use findOne
+ for this we copy paste try catch in createuser 
+
+ to check u can fill email and password that exisits in database in thunder client bt setting the link as localhost:5000/api/loginuser  but make sure the syntax is abs right else it will give error
+ now we want that whenevver login is successfull then we are redirected to the home page for that we use useNavigate inside the login page
+
+ how to encrypt password or make it secure , by the help os bcrypt which is a hashing alogirthm , by the help of hashing the password will have a highly encrypted form of password that will be visible in database and cant be decode by anone 
+ how to download bcrypt  (come to the backend terminal) : C:\Code\vscodes\mernstack\mernapp\backend> npm i bcryptjs jsonwebtoken
+ come to createuser now and do the changges : const bcrypt=require("bcryptjs");
+also before saving the password in try block we will prepare salt and genrate its(salt's) hash with help of bcrypt fcuntion inside
+const salt=await bcrypt.genSalt(10);
+let secPassword=await bcrypt.hash(req.body.password)
+//instead of password:req.body.password, since we have encrypted the password so it will be liek:
+            password:secPassword,
+now u can run nodemon again and check for encryption
+
+//how to use json webtoken : it is used to transfer info frm client to server and vice versa 
+go to createuser and add:
+const jst=require("jsonwebtoken");
+const pwdCompare=await bcrypt.compare(req.body.password,userData.password) //since we stored the data in userData
+// authtoken : in createuser
+const jwtSecret="MynameisHeltoHelYouTubeChannel$#"   //this is for authtoken
+const data={
+   user:{
+    id:userData.id
+   }
+}
+const authToken=jwt.sign(data,jwtSecret);
+res.json({success:true,authToken:authToken}); 
+to chheck it , u can create a post request in the link : localhost:5000/api/loginuser
+now send email and  password  , then an authtoken will be generated if email n password exists in the database
+output in thunder client would be lke : "success": true,
+  "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjUzMjcxNWI0NGExZTM4ZmU2MmVkZGU0In0sImlhdCI6MTY5NzkxMjA5MH0.gTrmDXhjufWCU6jdFuXL3VYg3FPy5fLlRNhlo9nDSHs"
+  also edit in login.js inside json.success:   localStorage.setItem("authToken",json.authToken);
+
+going back to backend , how to show database data on frontend
+in db.js   if(err){
+      console.log(err);
+    }
+    
+    else{
+        global.doctors=data;  since it is global so it can be now used anywhere in the code
+        console.log(global.doctors);
+    }
+
+    now to index.js : app.use('/api',require('./Routes/DisplayData'));  and create DisplayData and write code there to hit the backend , u can check it by writing http://localhost:5000/api/doctorData in thunder client
+    similalry now we will retrieve doctor category in our backend, go to db,js const doctorCategory=await mongoose.connection.db.collection("doctorCategory");
+doctorCategory.find({}).toArray(function (err,catData){
+    if(err){
+           console.log(err);
+        }
+
+          else{
+      global.doctors=data;
+      global.doctorCategory=catData;
+
+      //last i have used doctors and doctorCategory same as in backend
+
+      //sometimes it might happen that database is not showing then first run the backend (ex  cd .\mernapp then cd .\backend then nodemon index.js ) and then run the frontend ( cd .\mernapp then npm start) u can try vice versa aswell 
+
+
+     //  A BIG ERROR CAME - inside home.js inside this piece of code :  doctorItem.filter((item)=>item.Category===data.CategoryName)
+     .map(filterItems=>{ , actually what happened was in the mongodb we had category and not categoryname and i kept comparing item.CategoryName===data.CategoryName  when it shld have been item.Category===data.CategoryName
+     so make sure that names thta u are using/refering from backend are exactly same
+
+     50:40
+
+
+     //backend earlier 
+       "Category": "Gynaecologist",
+        "name": "delayed or painful periods",
+        "img": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpY2tlbiUyMGZyaWVkJTIwcmljZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "Do you feel excruciating pain while you are mensurating or absence/delay of periods due to any reason or Leucorrhea (excess white vaginal discharge) or menopause ? If yes then consult our gynie right away.  "
+    },
+    {
+        "Category": "Gynaecologist",
+        "name": "Endometriosis",
+        "img": "https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmVnJTIwZnJpZWQlMjByaWNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "Do you have far worse irregular periods with fatigue , short breath and painful bowl movements ? Consult our doctors for assistance"
+    },
+    
+    {
+        "Category": "Gynaecologist",
+        "name": "Fibroids",
+        "img": "https://cdn.pixabay.com/photo/2019/11/04/12/16/rice-4601049__340.jpg",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "Frequent urination , Enlargement of the lower abdomen, lower back pain ,Discomfort near rectum, heavy menstural bleeding ."
+    },
+    {
+        "Category": "Gynaecologist",
+        "name": "Vaginitis",
+        "img": "https://media.istockphoto.com/photos/veg-biryani-picture-id1363306527?b=1&k=20&m=1363306527&s=170667a&w=0&h=VCbro7CX8nq2kruynWOCO2GbMGCea2dDJy6O6ebCKD0=",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "Inflammation or infection around the genitals leading to pain,itching and odor, take consultation from our gynaecologist now"
+    },
+    {
+        "Category": "Gynaecologist",
+        "name": "Sexual dysfunction",
+        "img": "https://media.istockphoto.com/photos/king-fish-biryani-with-raita-served-in-a-golden-dish-isolated-on-dark-picture-id1409942571?b=1&k=20&m=1409942571&s=170667a&w=0&h=ozlMJf5hsDmS2sSdEdBWnoSZOEITef4qGMeWeq2lyTc=",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "Persistent, recurrent problems with sexual response, or pain — that distress you or strains, can be consulted with our doctors right away "
+    },
+    {
+        "Category": "Gynaecologist",
+        "name": "Polycystic ovarian syndrome (PCOS)",
+        "img": "https://cdn.pixabay.com/photo/2018/03/23/08/27/thai-fried-rice-3253027__340.jpg",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm" 
+            }
+        ],
+        "description": "Do you have way too irregular or fewer than nine periods a year and hair loss with hypertension , our online assistance would sure give you a good advice to start with"
+    },
+    {
+        "Category": "obstetrician-gynecologist",
+        "name": "suspected pregnancy,miscarriage or VBAC",
+        "img": "https://media.istockphoto.com/photos/spicy-paneer-or-chilli-paneer-or-paneer-tikka-or-cottage-cheese-in-picture-id697316634?b=1&k=20&m=697316634&s=170667a&w=0&h=bctfHdYTz9q2dJUnuxGRDUUwC9UBWjL_oQo5ECVVDAs=",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "If do to probable reasons you are suspecting preganancy ,want to have a STD test or have questions about VBAC (vaginal births after cesarean delivery) , pregnancy complications or about sexual/reproductive health our OB/GYN specialists will guide you through completely "
+    },
+    {
+        "Category": "obstetrician-gynecologist",
+        "name": "Mental health",
+        "img": "https://media.istockphoto.com/photos/paneer-tikka-kabab-in-red-sauce-is-an-indian-dish-made-from-chunks-of-picture-id1257507446?b=1&k=20&m=1257507446&s=170667a&w=0&h=Nd7QsslbvPqOcvwu1bY0rEPZXJqwoKTYCal3nty4X-Y=",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "we not only provide you with amazing reachable gynecologists but also with ables doctors who will help you out if there is any help needed regarding mental health , depression ,stress or filling prescriptions for common ailments, performing blood work for common diseases, and referring people to specialists."
+    },
+    {
+        "Category": "gynecologic-oncologist",
+        "name": "cervical or ovarial cancer advices",
+        "img": "https://media.istockphoto.com/photos/double-topping-pizza-on-the-wooden-desk-isolated-picture-id1074109872?k=20&m=1074109872&s=612x612&w=0&h=JoYwwTfU_mMBykXpRB_DmgeecfotutOIO9pV5_JObpk=",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "Is there sore in your vaginal area that doesn’t seem to heal? A lump that you can see and feel or that causes you pain? or any questions about what step to take next , contact our oncologists right away."
+    },
+    {
+        "Category": "gynecologic-oncologist",
+        "name": "Breast Cancer",
+        "img": "https://media.istockphoto.com/photos/chinese-food-veg-pizza-picture-id1341905237?k=20&m=1341905237&s=612x612&w=0&h=Lbuza1Ig5cC1PwQhqTsq-Uac8hg1W-V0Wx4d4lqDeB0=",
+        "options": [
+            {
+                "morning": "10am-2pm",
+                "evening": "4pm-8pm"
+            }
+        ],
+        "description": "Having swelling/redness/scaling/flaking/thickening of the nipple or breast skin? have doubts about having the disease ? or about mammography , consult our oncologists right away. "
+    }
+]
+
+//more about carousal , we cant make it a separate component bcz it is not being used anywhere else so copy paste carousal code into home.js
+
+//for search bar use usestate inside home
+
+//to change css of images , go to card  
+ <div><div className="card mt-3" style={{ "width": "18rem", "maxHeight": "360px" }}>
+                <img src={props.imgSrc}  className="card-img-top .bg-image " alt="..." style={{height:"120px",objectFit:"fill"}}/>
+                <div className="card-body">
+                    <h5 className="card-title">{props.doctorName}</h5>
+
+
+//usestate and usereducer 
+now if we wanna send info of how many appointments on what date has been selected we will use props and make a state and send it to cart page these are inbuilt libraries but since we have multiple options so ussing state wont be feasible so we will make use of usereducer(read about these libraries eg usereducer createcontext etc)
+so we will make a file contextreducer in componenets
+to understand the below check documentatiion of react<CartDispatchContext.Provider value={dispatch}>
+    <CartStateContext.Provider value={state}></CartStateContext.Provider>
+</CartDispatchContext.Provider>
+we will also wrap  app.js inside <cardprovider> so as to use cartprovider everywhere globally for that we need to do one more thing that is toexport dispatch and context 
+in card let doctorItem=props.doctorItems; cld be let doctorItem=props.doctorItem;
+
+now in card 
+we have actually stored everything in doctoritem and props and passed it in card using reudcer and state 
+qty - mornign/eve size-time ""
+next-contextreudcer me reducer fucntion , n see thoda video peechey se to get idea of setqty in card
+
+BACKEND
+if you want to connect the backend with frontend it will happen only if you run frontend ie.  cd .\mernapp and  npm start  and backend ie.  cd .\mernapp  cd .\backend nodemon index.js , simultaneously in SPLIT TERMINALS , if u dont then it will not be connected and fucntionalities such as login which need mongodb wont work    
+ 
+ //ID='ROOT'
+ this div is important in index.html of react ,, actually every single page that opens is rendered under this div of id=root , but what if we want a different div and we want to keep it in single page then we use MODAL 
+ MODAL
+ we createPortal , the we add a div in index.html as id =cart-root
+ modal.js ka code i hv cpoid frm git(end2endlstvidolinkfrgit) 
+
+
+ context reducer use kia hia delete fucntionality me or add me cart k andr 
+ remove -slice fucntion is used in jss
+
+
+
+
+ //of no use 
+ handle boook me pele ye tha bs
+ const handleBook=async()=>{
+
+await dispatch({type:"ADD",id:props.doctorItem._id, name:props.doctorItem.name,qty:qty,size:size})
+myFunction();
+console.log(data);
+}
+
+
+
+
+
+
+
+
